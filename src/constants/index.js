@@ -1,0 +1,50 @@
+export type IActionType = {
+  type: string,
+  payload: Object
+};
+
+export const userActions = {
+  FETCH_USER_INFO: 'FETCH_USER_INFO',
+  LOGIN_AUTHENTICATION: 'LOGIN_AUTHENTICATION'
+};
+
+export const vehicleActions = {
+  GET_VEHICLE_LOCATION: 'GET_VEHICLE_LOCATION',
+  GET_VEHICLE_PATH: 'GET_VEHICLE_PATH',
+  GET_VEHICLE_START_STOP: 'GET_VEHICLE_START_STOP',
+  GET_INDIVIDUAL_GEOADDRESS: 'GET_INDIVIDUAL_GEOADDRESS',
+  UPDATE_VEHICLE_SOCKET: 'UPDATE_VEHICLE_SOCKET'
+};
+
+export const reportActions = {
+  REPORT_GET_VEHICLE_LIST: 'REPORT_GET_VEHICLE_LIST',
+  GET_FILTER_REPORT: 'GET_FILTER_REPORT'
+};
+
+export const geoFenceActions = {
+  GET_GEOFENCE_LIST: 'GET_GEOFENCE_LIST',
+  ADD_GEOFENCE_DATA: 'ADD_GEOFENCE_DATA',
+  REMOVE_GEOFENCE_DATA: 'REMOVE_GEOFENCE_DATA'
+};
+
+export const notificationActions = {
+  FETCH_NOTIFICATION: 'FETCH_NOTIFICATION'
+};
+
+export const settingActions = {
+  GET_VEHICLE_POPDETAIL: 'GET_VEHICLE_POPDETAIL',
+  SET_VEHICLE_POPDETAIL: 'SET_VEHICLE_POPDETAIL',
+  GET_VEHICLE_DEVICE_INFO: 'GET_VEHICLE_DEVICE_INFO',
+  GET_VEHICLE_LIST: 'GET_VEHICLE_LIST',
+  GET_DEVICE_LIST: 'GET_DEVICE_LIST',
+  GET_DRIVER_LIST: 'GET_DRIVER_LIST'
+};
+
+export const ActionType = {
+  vehicleActions,
+  userActions,
+  reportActions,
+  geoFenceActions,
+  notificationActions,
+  settingActions
+};

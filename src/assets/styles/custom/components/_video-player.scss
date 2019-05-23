@@ -1,0 +1,128 @@
+.vehicle-play {
+	padding: 20px;
+	.leaflet-bar-timecontrol {
+		background: transparent;
+		box-shadow: none;
+		.leaflet-control-timecontrol {
+			border: none;
+		}
+	}
+}
+.leaflet-bar-timecontrol a.timecontrol-date {
+	display: inline-block;
+	padding: 0 !important;
+	pointer-events: none;
+	text-align: left;
+	font-size: $font-size-sm;
+	color: $color-blue;
+	font-weight: $font-semi-bold;
+}
+.timecontrol-slider .slider {
+	background: #C4C4C4;
+	border: none !important;
+}
+.timecontrol-slider .knob {
+	background-color: $color-blue !important;
+	border: none !important;
+}
+.leaflet-bar-timecontrol .timecontrol-slider {
+	// width: 100% !important;
+}
+.leaflet-bar-timecontrol .timecontrol-dateslider .slider {
+	width: calc(100vw - 310px) !important;
+	margin-left: 0 !important;
+	margin-right: 0 !important;
+}
+.leaflet-control-timecontrol.timecontrol-backward {
+	background: lighten($color-black, 96%) !important;
+	&:before {
+		content: "\e911";
+		font-family: $font-icon;
+		color: $color-blue;
+		display: inline-block;
+		@include rotate(90deg);
+	}
+	&:hover {
+		background: lighten($color-black, 90%) !important;
+	}
+}
+.leaflet-control-timecontrol.timecontrol-play.play {
+	background: lighten($color-black, 96%) !important;
+	margin-left: 2px;
+	margin-right: 2px;
+	&:before {
+		content: "\e900";
+		font-family: $font-icon;
+		color: $color-blue;
+	}
+	&:hover {
+		background: lighten($color-black, 90%) !important;
+	}
+}
+.leaflet-control-timecontrol.timecontrol-play.pause {
+	background: lighten($color-black, 96%) !important;
+	margin-left: 2px;
+	margin-right: 2px;
+	&:before {
+		content: "\e901";
+		font-family: $font-icon;
+		color: $color-blue;
+	}
+	&:hover {
+		background: lighten($color-black, 90%) !important;
+	}
+}
+.leaflet-control-timecontrol.timecontrol-forward {
+	background: lighten($color-black, 96%) !important;
+	&:before {
+		content: "\e911";
+		font-family: $font-icon;
+		color: $color-blue;
+		display: inline-block;
+		@include rotate(-90deg);
+	}
+	&:hover {
+		background: lighten($color-black, 90%) !important;
+	}
+}
+.leaflet-control-timecontrol.timecontrol-slider.timecontrol-speed {
+	width: auto !important;
+	margin-left: 30px;
+	&:before {
+		content: "\e92b";
+		font-family: $font-icon;
+	}
+	.speed {
+		margin-left: 8px;
+	}
+}
+.leaflet-bar-timecontrol .timecontrol-speed .slider {
+	// height: 8px;
+	// margin: 9px 6px;
+	// .knob {
+	// 	height: 13px;
+	// 	margin-top: -3px;
+	// 	background: darken($color-blue, 15%);
+	// }
+}
+.leaflet-control.elevation .area {
+	fill: lighten($color-navy-blue-light, 10%) !important;
+}
+.leaflet-control-timecontrol.timecontrol-slider {
+	float: left;
+	display: inline-block;
+	.speed-control {
+		display: inline-block;
+		padding-left: 10px;
+		li {
+			display: inline-block;
+			padding: 0 5px;
+			margin-right: 2px;
+			cursor: pointer;
+			&:hover,
+			&.active {
+				color: $color-blue;
+			}
+		}
+	}
+}

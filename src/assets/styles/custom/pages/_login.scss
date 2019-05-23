@@ -1,0 +1,103 @@
+main[role="login"] {
+	@extend .display-flex;
+	section[role="login-left"],
+	section[role="login-right"] {
+		-ms-flex: 1;
+    flex: 1;
+    height: 100vh;
+	}
+	section[role="login-left"] {
+		background: $color-navy-blue-dark;
+		position: relative;
+		.login-box {
+			position: absolute;
+			width: 340px;
+			@extend .v-c-align;
+			figure {
+				text-align: center;
+				margin-bottom: 40px;
+				img {
+					width: 120px;
+				}
+			}
+			.login-form {
+				border: #7396B4 solid 1px;
+				padding: 40px;
+				position: relative;
+				&:before {
+					content: '';
+					position: absolute;
+					@extend .c-align;
+					top: -20px;
+					width: 40px;
+					height: 40px;
+					@include border-radius(50%);
+					background-size: 34px auto;
+				}
+				fieldset {
+					margin-bottom: 20px;
+					color: #B5CBDE;
+					legend {
+						text-transform: uppercase;
+						font-size: $font-size-base;
+						margin-bottom: 5px;
+					}
+					.input-wrap {
+						position: relative;
+						input {
+							width: 100%;
+							border: none;
+							border-bottom: #B5CBDE solid 1px;
+							background: transparent;
+							color: $color-white;
+							padding-left: 20px;
+							padding-right: 20px;
+						}
+						&:before {
+							position: absolute;
+							left: 0;
+							@extend .v-align;
+							font-family: $font-icon;
+						}
+						&.user {
+							&:before {
+								content: "\e919";
+							}
+						}
+						&.password {
+							&:before {
+								content: "\e908";
+							}
+							.view-password {
+								position: absolute;
+								cursor: pointer;
+								@extend .v-align;
+								right: 0;
+								opacity: 0.6;
+								&:hover {
+									opacity: 1;
+								}
+							}
+						}
+					}
+				}
+				.btn-login {
+					width: 100%;
+					background: darken($color-navy-blue-dark, 5%);
+					padding: 10px;
+					border: none;
+					color: $color-white;
+					cursor: pointer;
+					&:hover {
+						background: darken($color-navy-blue-dark, 8%);
+					}
+				}
+			}
+		}
+	}
+	section[role="login-right"] {
+		background-size: 300px auto, 300px auto;
+		background-position: center center, center bottom;
+		background-repeat: no-repeat;
+	}
+}

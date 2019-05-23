@@ -1,0 +1,20 @@
+.form-wrap {
+	fieldset {
+		margin-bottom: 15px;
+		legend {
+			font-size: $font-size-base;
+			margin-bottom: 3px;
+			font-weight: $font-semi-bold;
+		}
+		label {
+			margin-bottom: 2px;
+		}
+		input {
+			padding: 9px 12px 8px;
+			width: 100%;
+			font-size: $font-size-base;
+			border: lighten($color-black, 80%) solid 1px;
+			@include border-radius(2px);
+		}
+	}
+}

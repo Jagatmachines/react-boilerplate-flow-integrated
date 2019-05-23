@@ -1,0 +1,53 @@
+aside[role="sidebar-left"] {
+	background: $color-navy-blue-dark;
+	padding-top: $siteHeader;
+	min-height: calc(100vh);
+	z-index: 9992;
+	.fixed {
+		position: fixed;
+		background: $color-navy-blue-dark;
+		width: $layout-left;
+		min-height: calc(100vh);
+	}
+	.user-info {
+		padding: 20px;
+		border-bottom: #456C91 solid 1px;
+		margin-bottom: 20px;
+		figure {
+			text-align: center;
+			margin-bottom: 0;
+			.fig-img {
+				width: 44px;
+				height: 44px;
+				display: inline-block;
+				@include border-radius(50%);
+				background: lighten(desaturate(adjust-hue($color-navy-blue-dark, 3), 38.83), 58.43);
+				position: relative;
+				&:before {
+					content: "\e919";
+					position: absolute;
+					@extend .v-c-align;
+					font-family: $font-icon;
+					font-size: $font-size-lg;
+					color: $color-navy-blue-dark;
+				}
+				img {
+					width: 100%;
+					position: relative;
+					z-index: 1;
+				}
+			}
+			figcaption {
+				margin-top: 10px;
+				color: lighten(desaturate(adjust-hue($color-navy-blue-dark, 3), 38.83), 58.43);
+				h5 {
+					margin-bottom: 3px;
+					font-size: $font-size-base;
+				}
+				.user-type {
+					font-size: $font-size-sm;
+				}
+			}
+		}
+	}
+}

@@ -1,0 +1,389 @@
+header[role="site-header"] {
+	background: $color-white;
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.08);
+	height: $siteHeader;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	// padding: 0 15px;
+	z-index: 9999;
+	.site-logo {
+		background: $color-navy-blue-light;
+		padding-top: 14px;
+		height: $siteHeader;
+		display: block;
+		padding-left: 20px;
+		padding-right: 20px;
+		a {
+			max-width: 82px;
+			display: block;
+			img {
+				width: 100%;
+			}
+		}
+	}
+	.ham-icon {
+		width: 28px;
+		margin-top: 16px;
+		cursor: pointer;
+		// @extend .clearfix;
+		span {
+			display: block;
+			width: 100%;
+			background: $color-navy-blue-light;
+			height: 3px;
+			@include border-radius(2px);
+			&:nth-child(2) {
+				margin: 3px 0;
+				width: 85%;
+			}
+			&:nth-child(3) {
+				width: 70%;
+			}
+		}
+		&:hover {
+			span {
+				background: $color-navy-blue-dark;
+			}
+		}
+	}
+	.search-page {
+		margin-top: 11px;
+		position: relative;
+		.btn-search {
+			background: transparent;
+			border: none;
+			height: 29px;
+			position: absolute;
+			top: 0;
+			left: 0;
+			padding-top: 5px;
+		}
+		input {
+			padding: 3px 5px 3px 25px;
+			padding-left: 25px;
+			border: lighten($color-black, 80%) solid 1px;
+			@include border-radius(2px);
+			width: 180px;
+		}
+	}
+	.right-nav,
+	.left-nav {
+		display: inline-block;
+		ul {
+			@extend .clearfix;
+			margin-bottom: 0;
+			li {
+				float: left;
+				padding: 0 15px;
+				min-height: $siteHeader;
+				border-left: lighten($color-blue, 20%) solid 1px;
+				&:first-child {
+					border-left: none;
+				}
+				ul {
+					padding: 0;
+					li {
+						min-height: inherit;
+						float: inherit;
+						border-left: none;
+					}
+				}
+			}
+		}
+		.profile-dropdown {
+			height: $siteHeader;
+			width: 50px;
+			position: relative;
+			button {
+				background: transparent;
+				border: none;
+				padding: 0;
+				color: $color-white;
+				position: relative;
+				display: block;
+				font-size: $font-size-base;
+				height: 100%;
+				width: 32px;
+				&:after {
+					content: "\e911";
+					font-family: $font-icon;
+					position: absolute;
+					right: -6px;
+					top: 15px;
+					color: $color-navy-blue-dark;
+					border: none;
+				}
+				&:active {
+					background-color: transparent;
+					border-color: transparent;
+				}
+				.dropdown-text {
+					@extend .text-ellipsis;
+					max-width: 100px;
+				}
+				.dropdown-img {
+					width: 32px;
+					height: 32px;
+					position: absolute;
+					@extend .v-align;
+					right: 0;
+					overflow: hidden;
+					@include border-radius(50%);
+					background: $color-navy-blue-dark;
+					&:before {
+						content: "\e919";
+						position: absolute;
+						@extend .v-c-align;
+						font-family: $font-icon;
+						color: $color-white;
+					}
+					img {
+						width: 100%;
+						position: relative;
+						z-index: 9;
+					}
+				}
+			}
+			.dropdown-menu {
+				padding: 0;
+				border: lighten($color-black, 90%) solid 1px;
+				box-shadow: 0px 1px 4px rgba(0, 0, 0, 0.2);
+				@include border-radius(2px);
+				border: none;
+				width: 200px;
+				&:before {
+					content: '';
+					-webkit-clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+					clip-path: polygon(0 100%, 100% 100%, 50% 50%);
+					width: 14px;
+					height: 14px;
+					position: absolute;
+					right: 	15px;
+					top: -14px;
+					background: $color-white;
+				}
+				ul {
+					li {
+						padding: 0;
+						border-top: lighten($color-black, 90%) solid 1px;
+						&:nth-child {
+							border-top: none;
+						}
+						a {
+							padding: 8px 18px;
+							font-size: $font-size-base;
+							color: $color-base;
+							display: block;
+							&:hover {
+								text-decoration: none;
+								background: lighten($color-blue, 46%);
+							}
+							i {
+								margin-right: 18px;
+							}
+						}
+					}
+				}
+				.user-info {
+					background: $color-blue;
+					padding: 10px;
+					figure {
+						margin-bottom: 0;
+						display: -ms-flexbox;
+						display: flex;
+						-ms-flex-align: start;
+						align-items: flex-start;
+						.fig-img {
+							width: 36px;
+							height: 36px;
+							@include border-radius(50%);
+							background: $color-white;
+							position: relative;
+							&:before {
+								content: "\e919";
+								position: absolute;
+								@extend .v-c-align;
+								font-family: $font-icon;
+								font-size: $font-size-lg;
+								color: $color-blue;
+							}
+							img {
+								width: 100%;
+								position: relative;
+								z-index: 1;
+							}
+						}
+						figcaption {
+							padding-left: 10px;
+							color: $color-white;
+							-ms-flex: 1;
+    					flex: 1;
+    					width: 140px;
+							h5 {
+								margin-bottom: 2px;
+								font-size: $font-size-base;
+								@extend .text-ellipsis;
+								width: 100%;
+							}
+							.user-type {
+								font-size: $font-size-sm;
+								@extend .text-ellipsis;
+								width: 90%;
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+	.notification-dropdown {
+		button {
+			background-color: transparent !important;
+			border: none;
+			color: $color-navy-blue-dark !important;
+			height: $siteHeader;
+			&:after {
+				border: none;
+				width: 8px;
+				height: 8px;
+				background: $color-red;
+				@include border-radius(50%);
+				position: absolute;
+				left: 12px;
+				top: 5px;
+			}
+		}
+		.dropdown-menu {
+			padding: 0;
+			width: 300px;
+			font-size: $font-size-sm + 1px;
+			.noty-head {
+				padding: 5px 15px;
+				border-bottom: lighten($color-black, 94%) solid 1px;
+				h6 {
+					margin-top: 2px;
+					margin-bottom: 0;
+					font-size: $font-size-sm + 1px;
+					span {
+						background: $color-red;
+						color: $color-white;
+						font-size: $font-size-sm - 2px;
+						padding: 2px;
+					}
+				}
+				.mark-all {
+					color: $color-blue;
+					display: inline-block;
+					font-size: $font-size-sm + 1px;
+				}
+			}
+			.noty-list {
+				max-height: 300px;
+				overflow-x: auto;
+				li {
+					border-bottom: lighten($color-black, 94%) solid 1px;
+					padding: 0;
+					a {
+						padding: 8px 15px;
+						background: #F9FCFC;
+						color: $color-base;
+						display: block;
+						figure {
+							display: -ms-flexbox;
+							display: flex;
+							-ms-flex-align: start;
+							align-items: flex-start;
+							margin-bottom: 0;
+							.fig-icon {
+								width: 36px;
+								height: 36px;
+								line-height: 36px;
+								padding-top: 2px;
+								text-align: center;
+								color: $color-blue;
+								font-size: $font-size-lg + 2px;
+								background: lighten($color-black, 90%);
+								@include border-radius(50%);
+								position: relative;
+							}
+							figcaption {
+								-ms-flex: 1;
+    						flex: 1;
+    						padding-left: 10px;
+    						width: 200px;
+								h6 {
+									margin-bottom: 2px;
+									font-size: $font-size-sm;
+									span {
+										color: $color-blue;
+										font-style: italic;
+									}
+								}
+								p {
+									margin: 0;
+									font-size: $font-size-sm;
+									width: 90%;
+									@extend .text-ellipsis;
+								}
+							}
+						}
+						&:hover {
+							background: lighten($color-black, 96%);
+							text-decoration: none;
+						}
+					}
+				}
+			}
+			.noty-foot {
+				text-align: center;
+				a {
+					color: $color-base;
+					display: block;
+					padding: 5px;
+					&:hover {
+						background: $color-blue;
+						color: $color-white;
+					}
+				}
+			}
+		}
+	}
+	.left-nav {
+		ul {
+			li {
+				border: none;
+			}
+		}
+	}
+	.vehicle-status {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-align: start;
+		align-items: flex-start;
+		padding-top: 16px;
+		i {
+			font-size: 70px;
+			line-height: 20px;
+			position: absolute;
+			bottom: 5px;
+			right: 0;
+		}
+		&-on {
+			position: relative;
+			margin-right: 30px;
+			padding-right: 74px;
+			i {
+				color: $color-blue;
+			}
+		}
+		&-off {
+			position: relative;
+			padding-right: 74px;
+			i {
+				color: $color-red;
+			}
+		}
+	}
+}

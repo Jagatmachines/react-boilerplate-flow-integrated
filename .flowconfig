@@ -1,0 +1,47 @@
+[ignore]
+.*/node_modules/.*
+.*/build/.*
+.*/src/scenes/Design
+.*/src/.*.css
+
+
+[untyped]
+
+[include]
+
+[libs]
+flow-typed
+
+[lints]
+all=warn
+deprecated-type=off
+dynamic-export=off
+unclear-type=off
+unsafe-getters-setters=off
+
+[options]
+all=true
+include_warnings=true
+
+module.system.node.resolve_dirname=node_modules
+
+esproposal.decorators=ignore
+esproposal.class_static_fields=enable
+esproposal.class_instance_fields=enable
+
+suppress_type=$FlowIssue
+suppress_type=$FlowFixMe
+
+; Extensions
+module.file_ext=.js
+module.file_ext=.jsx
+module.file_ext=.json
+module.file_ext=.css
+; module.file_ext=.min.scss
+module.file_ext=.scss
+
+module.name_mapper.extension='scss' -> 'empty/object'
+module.name_mapper.extension='css' -> 'empty/object'
+; module.name_mapper='.*\.min.scss' -> 'empty/object'
+
+[strict]

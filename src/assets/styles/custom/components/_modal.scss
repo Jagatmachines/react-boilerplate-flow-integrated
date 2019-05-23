@@ -1,0 +1,71 @@
+.modal-backdrop {
+	z-index: 9999;
+}
+.melo-model {
+	z-index: 99991;
+	&.melo-model-sm {
+		.modal-dialog {
+			max-width: 600px;
+		}
+	}
+	&.melo-model-lg {
+		.modal-dialog {
+			max-width: 900px;
+		}
+	}
+	.modal-content {
+		border: none;
+		@include border-radius(4px);
+		overflow: hidden;
+		header {
+			background: $color-blue;
+			padding: 10px 60px 10px 30px;
+			color: $color-white;
+			position: relative;
+			h3 {
+				margin: 0;
+			}
+			.btn-close {
+				position: absolute;
+				right: 15px;
+				@extend .v-align;
+				cursor: pointer;
+				font-size: $font-size-md;
+				opacity: 0.8;
+				i {
+					display: inline-block;
+					@include transition(all, 0.5s, ease);
+				}
+				&:hover {
+					opacity: 1;
+					i {
+						@include rotate(-90deg);
+					}
+				}
+			}
+		}
+		.modal-body {
+			padding: 15px 30px;
+		}
+		.notification-model-cnt {
+			padding: 30px;
+			figure {
+				margin-bottom: 0;
+				.fig-icon {
+					text-align: center;
+					font-size: 40px;
+				}
+				h6 {
+					color: $color-blue;
+				}
+			}
+		}
+		footer {
+			text-align: right;
+			padding: 0 30px 30px 30px;
+			button {
+				margin-left: 10px;
+			}
+		}
+	}
+}

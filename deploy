@@ -1,0 +1,12 @@
+#!/bin/sh
+
+echo "Switching to branch master"
+git checkout master
+
+echo "Building app"
+yarn build
+
+echo "Deploying files to server"
+rsync -avP build/ root@139.162.2.53:/var/www/bitbucket/meloV3/productionBuild/
+echo "Deployment complete"
+

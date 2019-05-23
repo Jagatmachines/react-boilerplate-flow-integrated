@@ -1,0 +1,145 @@
+.btn {
+	position: relative;
+	border-width: 1px;
+	border-style: solid;
+	@include border-radius(4px);
+	&-sm {
+		padding: 6px 15px;
+		font-size: $font-size-sm;
+	}
+	&-md {
+		padding: 9px 30px 8px;
+		font-size: $font-size-base;
+	}
+	&-lg {
+		padding: 12px 44px;
+		font-size: $font-size-base;
+	}
+	&-white {
+		background: $color-white;
+		border-color: $color-white;
+		color: $color-base;
+		&:hover {
+			background: lignten($color-black, 90%);
+			border-color: lignten($color-black, 90%);
+			color: $color-base;
+		}
+	}
+	&-red {
+		background: $color-red;
+		border-color: $color-red;
+		color: $color-white;
+		&:hover {
+			background: $color-red-dark;
+			border-color: $color-red-dark;
+			color: $color-white;
+		}
+	}
+	&-blue {
+		background: $color-blue;
+		border-color: $color-blue;
+		color: $color-white;
+		&:hover {
+			background: $color-blue-dark;
+			border-color: $color-blue-dark;
+			color: $color-white;
+		}
+	}
+	&-blue-stroke {
+		background: $color-white;
+		border-color: $color-blue;
+		color: $color-blue;
+		&:hover {
+			background: $color-blue;
+			border-color: $color-blue;
+			color: $color-white;
+		}
+	}
+	&-grey {
+		background: lighten($color-black, 50%);
+		border-color: lighten($color-black, 50%);
+		color: $color-white;
+		&:hover {
+			background: $color-base;
+			border-color: $color-base;
+			color: $color-white;
+		}
+	}
+	&-grey-stroke {
+		background: $color-white;
+		border-color: $color-base;
+		color: $color-base;
+		&:hover {
+			background: $color-base;
+			border-color: $color-base;
+			color: $color-white;
+		}
+	}
+}
+
+.switch-btn {
+
+	input[type="checkbox"] {
+	  display: none;
+	  &:checked {
+	  	& ~ .switch-toggle {
+	  		background: $color-blue;
+	  		label {
+	  			left: 25px;
+	  			@include rotate(360deg);
+	  		}
+	  	}
+	  }
+	}
+
+	.switch-toggle {
+	  height: 22px;
+	  width: 44px;
+	  background: lighten($color-black, 70%);
+	  position: relative;
+	  top: 0;
+	  left: 0;
+	  @include border-radius(20px);
+	  label {
+	  	@include transition(all, 0.5s, ease);
+		  height: 16px;
+		  width: 16px;
+		  background: $color-white;
+		  position: absolute;
+		  text-align: center;
+		  top: 3px;
+		  left: 3px;
+		  cursor: pointer;
+		  @include border-radius(50%);
+		  @include rotate(0);
+		  &:before,
+		  &:after {
+		  	border-radius: 5px;
+	  		font-family: $font-icon;
+	  		font-size: $font-size-base - 4px;
+	  		position: absolute;
+	  		@extend .c-align;
+	  		top: 2px;
+		  }
+		  &:before {
+				content: "\e91e";
+				color: lighten($color-black, 60%);
+			}
+			&:after {
+				content: "";
+			}
+		}
+	}
+	input[type="checkbox"] {
+		&:checked {
+			& ~ .switch-toggle {
+				label{
+				  &:before {
+				  	content: "\e91f";
+				  	color: $color-blue;
+				  }
+				}
+			}
+		}
+	}
+}

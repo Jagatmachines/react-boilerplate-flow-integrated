@@ -1,0 +1,48 @@
+// Datepicker
+section[role="vehicle-details"] {
+	.tab-content {
+		.vehicle-info {
+			ul {
+				li {
+					.date-wrap {
+						.SingleDatePicker_picker {
+							ul {
+								li {
+									padding: 0;
+									min-height: initial;
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+.date-wrap {
+	.SingleDatePicker {
+		.SingleDatePickerInput_calendarIcon {
+			margin: 0;
+			padding: 5px;
+		}
+	}
+	.DateInput_input {
+		padding: 3px 0 0 0;
+		border: none;
+		font-size: $font-size-sm;
+	}
+}
+.search-page {
+	.react-autosuggest__suggestions-container {
+		background: $color-white;
+		a {
+			color: $color-base;
+			font-size: $font-size-sm;
+			&:hover {
+				color: $color-blue;
+				text-decoration: none;
+			}
+		}
+	}
+}
+

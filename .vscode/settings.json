@@ -1,0 +1,9 @@
+{
+    "deepscan.enable": true,
+    "eslint.autoFixOnSave": true,
+    "flow.useNPMPackagedFlow": true,
+    "flow.runOnAllFiles": true,
+    "javascript.validate.enable": false,
+    "javascript.format.enable": false,
+    "prettier.eslintIntegration": true
+}

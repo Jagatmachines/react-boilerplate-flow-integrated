@@ -1,0 +1,101 @@
+.layout {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-align: start;
+	align-items: flex-start;
+	&-left {
+		width: $layout-left;
+		// @include transition(width, 0.1s, ease-in-out);
+	}
+	&-right {
+		-ms-flex: 1;
+    flex: 1;
+	}
+}
+main[role="main-content"] {
+	padding-top: $siteHeader;
+	min-height: calc(100vh);
+	position: relative;
+	// padding-left: $layout-left;
+	.data-section {
+		position: relative;
+		min-height: calc(100vh - #{($siteHeader + $breadcrumbHeight)});
+	}
+}
+.no-data {
+	margin-bottom: 0;
+	position: absolute;
+	@extend .v-c-align;
+	width: 400px;
+	text-align: center;
+	.fig-icon {
+		font-size: 70px;
+		color: $color-blue;
+	}
+	figcaption {
+		h2 {
+			color: $color-blue;
+		}
+		button {
+			margin-top: 20px;
+		}
+	}
+}
+.collapse-sidebar{
+	header[role="site-header"] {
+		.site-logo {
+			padding: 5px 10px 0 10px;
+			a {
+				width: 34px;
+			}
+		}
+		.ham-icon {
+			span {
+				float: right;
+			}
+		}
+	}
+	aside[role="sidebar-left"] {
+		.fixed {
+			width: $layout-left-sm;
+		}
+		.user-info {
+			padding-left: 10px;
+			padding-right: 10px;
+			figure {
+				.fig-img {
+					width: 32px;
+					height: 32px;
+				}
+				figcaption {
+					@include transition(opacity, 0.2s, ease-in-out);
+					opacity: 0;
+					display: none;
+				}
+			}
+		}
+	}
+	nav[role="site-navigation"] {
+		ul {
+			li {
+				a {
+					span {
+						@include transition(opacity, 0.2s, ease-in-out);
+						opacity: 0;
+					}
+				}
+			}
+		}
+	}
+	.layout {
+		&-left {
+			width: $layout-left-sm;
+		}
+	}
+	section[role="vehicle-details"] {
+		width: calc(100vw - #{$layout-left-sm});
+	}
+	main[role="main-content"] {
+		// padding-left: $layout-left-sm;
+	}
+}

@@ -1,0 +1,29 @@
+nav[role="site-navigation"] {
+	ul {
+		li {
+			margin-bottom: 1px;
+			a {
+				color: $color-white;
+				display: block;
+				padding: 12px 20px 10px;
+				position: relative;
+				overflow: hidden;
+				span {
+					position: absolute;
+					left: 0;
+					padding-left: 40px;
+					@extend .v-align;
+				}
+				&:hover {
+					text-decoration: none;
+					background: darken($color-navy-blue-dark, 5%);
+				}
+			}
+			&.active {
+				a {
+					background: darken($color-navy-blue-dark, 5%);
+				}
+			}
+		}
+	}
+}

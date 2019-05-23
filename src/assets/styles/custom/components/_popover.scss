@@ -1,0 +1,115 @@
+.popover-box {
+	position: absolute;
+	@extend .v-c-align;
+	width: 240px;
+	background: $color-white;
+	filter: drop-shadow(0px 1px 6px rgba(0, 0, 0, 0.29));
+	z-index: 999;
+	font-size: $font-size-sm - 3px;
+	&:before {
+		content: '';
+		position: absolute;
+		width: 16px;
+		height: 16px;
+		@extend .v-align;
+		background: $color-white;
+	}
+	* {
+		white-space: normal !important;
+	}
+	.close {
+		position: absolute;
+		top: 8px;
+		right: 10px;
+		color: $color-white;
+		font-size: $font-size-sm - 2px;
+		opacity: 0.8;
+	}
+	header {
+		background: $color-blue;
+		padding: 8px 15px;
+		h6 {
+			text-transform: uppercase;
+			margin-bottom: 0;
+			color: $color-white;
+			font-size: $font-size-sm - 3px;
+		}
+	}
+	figure {
+		text-align: center;
+		.fig-icon {
+			position: relative;
+			display: inline-block;
+			width: 32px;
+			height: 32px;
+			margin-top: 10px;
+			margin-bottom: 10px;
+			// &.v-on {
+			// 	background: url('../../../assets/images/vehicle/truck.svg') 0 0 no-repeat;
+			// 	background-size: 100% auto;
+			// }
+			// &.v-off {
+			// 	background: url('../../../assets/images/vehicle/truck-on.svg') 0 0 no-repeat;
+			// 	background-size: 100% auto;
+			// }
+		}
+		figcaption {
+			display: block;
+			text-align: left;
+			padding: 0 15px;
+			address {
+				margin-bottom: 10px;
+			}
+			summary {
+				margin-bottom: 5px;
+				h6 {
+					margin-bottom: 0;
+					font-size: $font-size-sm - 3px;
+				}
+				p {
+					margin-bottom: 0;
+					color: lighten($color-black, 30%);
+				}
+			}
+		}
+	}
+	&.v-on {
+		header {}
+		figure {
+			.fig-icon {
+				background-size: 100% auto;
+			}
+		}
+	}
+	&.v-off {
+		header {
+			background: darken($color-red, 15%);
+		}
+		figure {
+			.fig-icon {
+				background-size: 100% auto;
+			}
+		}
+	}
+}
+.leaflet-tooltip {
+	opacity: 1 !important;
+}
+.leaflet-tooltip-right {
+	.popover-box {
+		&:before {
+			left: -16px;
+			-webkit-clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+			clip-path: polygon(100% 0, 50% 50%, 100% 100%);
+		}
+	}
+}
+.leaflet-tooltip-left {
+	.popover-box {
+		&:before {
+			right: -16px;
+			-webkit-clip-path: polygon(50% 50%, 0 0, 0 100%);
+			clip-path: polygon(50% 50%, 0 0, 0 100%);
+		}
+	}
+}
